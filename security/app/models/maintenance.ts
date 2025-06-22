@@ -22,6 +22,8 @@ export default class Maintenance extends BaseModel {
   @column()
   public observations!: string | null
 
-  @belongsTo(() => SecurityEquipment)
+  @belongsTo(() => SecurityEquipment, {
+    foreignKey: 'equipmentId',
+  })
   public equipment!: BelongsTo<typeof SecurityEquipment>
 }

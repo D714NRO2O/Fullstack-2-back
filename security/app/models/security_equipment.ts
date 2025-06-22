@@ -26,6 +26,8 @@ export default class SecurityEquipment extends BaseModel {
   @belongsTo(() => EquipmentType)
   public type!: BelongsTo<typeof EquipmentType>
 
-  @hasMany(() => Maintenance)
+  @hasMany(() => Maintenance, {
+    foreignKey: 'equipmentId',
+  })
   public maintenances!: HasMany<typeof Maintenance>
 }
