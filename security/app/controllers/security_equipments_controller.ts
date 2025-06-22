@@ -43,7 +43,7 @@ export default class SecurityEquipmentsController {
     ])
 
     if (data.installationDate) {
-      data.installationDate = DateTime.fromJSDate(data.installationDate)
+      data.installationDate = DateTime.fromISO(data.installationDate)
     }
 
     equipment.merge(data)

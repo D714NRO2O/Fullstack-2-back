@@ -42,7 +42,7 @@ export default class MaintenancesController {
     const data = request.only(['equipmentId', 'type', 'date', 'performedBy', 'observations'])
 
     if (data.date) {
-      data.date = DateTime.fromJSDate(data.date)
+      data.date = DateTime.fromISO(data.date)
     }
 
     maintenance.merge(data)
